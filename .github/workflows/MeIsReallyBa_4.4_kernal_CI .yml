@@ -30,8 +30,6 @@ jobs:
         include:
           - build_variant: "mt7621"
             targets: "K2P"
-          - build_variant: "mt7621"
-            targets: "R2100"
     steps:
       - name: Checkout main            # 导入主分支
         uses: actions/checkout@v2
@@ -62,7 +60,7 @@ jobs:
           ##科学上网##
           echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> $m.config #科学上网插件，选择n后全部有关插件都不集成
           echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> $m.config #集成xray执行文件  ~4.5M
-          echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> $m.config #集成v2ray执行文件
+          echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> $m.config #集成v2ray执行文件
           echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> $m.config #集成trojan执行文件  ~1.2M
           echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> $m.config #simple-obfs混淆插件
           echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=y" >> $m.config #SS server
